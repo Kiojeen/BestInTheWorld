@@ -248,6 +248,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FoodController
   maxSpawnDistance: 10
+  rotationSpeed: 5
 --- !u!1 &8572191331884341791
 GameObject:
   m_ObjectHideFlags: 0

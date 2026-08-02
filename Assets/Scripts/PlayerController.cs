@@ -4,14 +4,9 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerController : MonoBehaviour
 {
-    private SpawnManager spawnManager;
-
-
     private Rigidbody playerRb;
 
-    [SerializeField] private GameObject currentPlayer;
-
-    [SerializeField] private GameObject[] playersList;
+    private GameObject currentAvatar;
 
     [SerializeField] private InputAction movementAction;
 
@@ -28,21 +23,22 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         playerRb = GetComponent<Rigidbody>();
-        spawnManager = GameObject.Find("SpawnManager").GetComponent<SpawnManager>();
+
+        currentAvatar = transform.GetChild(0).gameObject;
 
         movementAction.Enable();
     }
 
 
-    public void ReplacePlayer(int index)
+    public void ReplacePlayerAvatar(GameObject newAvatar)
     {
-        Vector3 localPos = currentPlayer.transform.localPosition;
+        Vector3 localPos = currentAvatar.transform.localPosition;
 
-        Destroy(currentPlayer);
+        Destroy(currentAvatar);
 
-        currentPlayer = Instantiate(playersList[index], transform);
+        currentAvatar = Instantiate(newAvatar, transform);
 
-        currentPlayer.transform.localPosition = localPos;
+        currentAvatar.transform.localPosition = localPos;
     }
 
 
@@ -81,8 +77,12 @@ public class PlayerController : MonoBehaviour
     {
         if (other.CompareTag("Food"))
         {
-            Destroy(other.gameObject);
-            spawnManager.ObjectDestroyed();
+            FoodController food = other.GetComponent<FoodController>();
+
+            if (food != null)
+            {
+                food.Collect();
+            }
         }
     }
 }

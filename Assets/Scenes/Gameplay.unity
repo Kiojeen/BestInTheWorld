@@ -528,6 +528,106 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f0e5849d84361ea46977b4eaaf406e84, type: 3}
   m_PrefabInstance: {fileID: 1261926394}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &732330678
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 732330679}
+  - component: {fileID: 732330680}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &732330679
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 732330678}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1384931014}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &732330680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 732330678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9efa75a486b91bf4fb5a359666b85ba8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  player: {fileID: 809716742}
+  currentGameplayLevel: 0
+  currentPlayerScore: 0
+  levels:
+  - playerAvatar: {fileID: 720936428}
+    playerCompanions: []
+    playerCanHaveCompanion: 1
+    playerOwnsCompanion: 0
+    maxLevelScore: 2
+    food:
+    - {fileID: 5283984752288628349, guid: c1af0d29e34b726448683bda363e269c, type: 3}
+    - {fileID: 2257153481799421377, guid: a2746c70d901f364bb16ec0936e08eb3, type: 3}
+    - {fileID: 5752360058982222435, guid: 365d3bda8b51f384d82986af472fa87d, type: 3}
+    - {fileID: 4090615843970940865, guid: 02a76b6708da61f4ba97a431d8037687, type: 3}
+    - {fileID: 2089271077401652931, guid: 45aa927edc1d1dc41be09cecb16be467, type: 3}
+    - {fileID: 2766278661624835727, guid: dd3fa71ec3d21a44d9f5204be7288ace, type: 3}
+    - {fileID: 7200386677673449658, guid: cd52098c4e7eb45438dd3f37f51ccaa0, type: 3}
+    - {fileID: 4045448755442529919, guid: 4395f27a30b5ff44fa50dbc70b36e4e5, type: 3}
+    - {fileID: 2064101723328998600, guid: b969e23f4b6fd1146aa55eb0954b8166, type: 3}
+    - {fileID: 6124691278178186466, guid: 10cd68e2f1f3d8d49afff78a8f51bde4, type: 3}
+    - {fileID: 4546644449354009588, guid: a05a2ca545669584297c9fd393aec872, type: 3}
+    - {fileID: 3092854324121679171, guid: 9622449f1c1205f4fadff5afdfe618ab, type: 3}
+    - {fileID: 8078533665957121160, guid: 77115f9f19ae6ad47a8e02cc9c42d4cb, type: 3}
+    - {fileID: 330235802266129747, guid: 2270b3ca23f46da40bbdaba742d4db77, type: 3}
+    - {fileID: 7818705880956547433, guid: 182f929bba254c1489644a8e36dafa7c, type: 3}
+    - {fileID: 5067479555498695801, guid: 60b3c4decb7df074e99e13a245f9b838, type: 3}
+    - {fileID: 2368217078856486558, guid: 968bf2713603c8b4db62fecd71ae5815, type: 3}
+    - {fileID: 5255876912001764504, guid: 885787fceb60ba749a0225237bd9b8c8, type: 3}
+    - {fileID: 8265095996539639687, guid: 22a99916217a7fb428f29e413d20dd45, type: 3}
+    - {fileID: 7810283611281769637, guid: 15b4595daf9236d459dc7b0aa2efddf4, type: 3}
+    - {fileID: 8536141940083026543, guid: d17f47b13563d2d4eb50892d1ab6e08b, type: 3}
+    - {fileID: 407097720119702790, guid: 8c4d69f0e78df854b95c801b1e852666, type: 3}
+    - {fileID: 7268432415809173306, guid: d6a658df2d87e91418c22f6020fe6e0e, type: 3}
+    foodCollectEffect: {fileID: 4021103657954561960, guid: 5c755f9bc5253ea418e919994537dcc7, type: 3}
+  - playerAvatar: {fileID: 4551107278389196633, guid: aa9d459c0cf142547aae4379c928bc85, type: 3}
+    playerCompanions: []
+    playerCanHaveCompanion: 0
+    playerOwnsCompanion: 0
+    maxLevelScore: 4
+    food:
+    - {fileID: 5283984752288628349, guid: c1af0d29e34b726448683bda363e269c, type: 3}
+    foodCollectEffect: {fileID: 0}
+  - playerAvatar: {fileID: 0}
+    playerCompanions: []
+    playerCanHaveCompanion: 0
+    playerOwnsCompanion: 0
+    maxLevelScore: 0
+    food: []
+    foodCollectEffect: {fileID: 0}
+  - playerAvatar: {fileID: 0}
+    playerCompanions: []
+    playerCanHaveCompanion: 0
+    playerOwnsCompanion: 0
+    maxLevelScore: 0
+    food: []
+    foodCollectEffect: {fileID: 0}
 --- !u!1 &809716742
 GameObject:
   m_ObjectHideFlags: 0
@@ -559,9 +659,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 325fb6527d1ae0e4d865cac94f70cc78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
-  currentPlayer: {fileID: 720936428}
-  playersList:
-  - {fileID: 6425852055664284831, guid: f0424f9f1a2655848b899e8e20344e50, type: 3}
   movementAction:
     m_Name: Movement
     m_Type: 0
@@ -788,15 +885,76 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -1640354294723031822, guid: f0e5849d84361ea46977b4eaaf406e84, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.18853627
+      objectReference: {fileID: 0}
+    - target: {fileID: -1640354294723031822, guid: f0e5849d84361ea46977b4eaaf406e84, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.7857333
+      objectReference: {fileID: 0}
+    - target: {fileID: 194774638527659012, guid: f0e5849d84361ea46977b4eaaf406e84, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.1274634
+      objectReference: {fileID: 0}
+    - target: {fileID: 194774638527659012, guid: f0e5849d84361ea46977b4eaaf406e84, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.018468225
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: f0e5849d84361ea46977b4eaaf406e84, type: 3}
       propertyPath: m_Name
       value: rich_citizzens_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: f0e5849d84361ea46977b4eaaf406e84, type: 3}
+      propertyPath: m_Avatar
+      value: 
+      objectReference: {fileID: 9000000, guid: e14c5fa4f269e4f48a093fe86709c205, type: 2}
+    - target: {fileID: 5866666021909216657, guid: f0e5849d84361ea46977b4eaaf406e84, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: cabafd7ce1743fc41984130c3b12fa47, type: 2}
+    - target: {fileID: 5866666021909216657, guid: f0e5849d84361ea46977b4eaaf406e84, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0e5849d84361ea46977b4eaaf406e84, type: 3}
+--- !u!1 &1384931013
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1384931014}
+  m_Layer: 0
+  m_Name: Managers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1384931014
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1384931013}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 800.6636, y: -0.00001, z: 2670.64}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1792321855}
+  - {fileID: 732330679}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1508634117 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f0e5849d84361ea46977b4eaaf406e84, type: 3}
@@ -995,22 +1153,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e910fe916661ca42b163b39b419119c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnManager
-  levels:
-  - spawnables:
-    - {fileID: 5283984752288628349, guid: c1af0d29e34b726448683bda363e269c, type: 3}
-    - {fileID: 2257153481799421377, guid: a2746c70d901f364bb16ec0936e08eb3, type: 3}
-    - {fileID: 1504887267951010094, guid: 2036c7a01f006fa41b6ddf6cc1dd4b39, type: 3}
-    - {fileID: 5752360058982222435, guid: 365d3bda8b51f384d82986af472fa87d, type: 3}
-    - {fileID: 4090615843970940865, guid: 02a76b6708da61f4ba97a431d8037687, type: 3}
-    - {fileID: 2089271077401652931, guid: 45aa927edc1d1dc41be09cecb16be467, type: 3}
-    - {fileID: 2766278661624835727, guid: dd3fa71ec3d21a44d9f5204be7288ace, type: 3}
-    - {fileID: 7200386677673449658, guid: cd52098c4e7eb45438dd3f37f51ccaa0, type: 3}
-    - {fileID: 4933311035135212246, guid: abeb9f95befb32a4986e67cd3c6cca55, type: 3}
-    - {fileID: 4045448755442529919, guid: 4395f27a30b5ff44fa50dbc70b36e4e5, type: 3}
-  - spawnables: []
   maxSpawnedObjects: 20
   spawnInterval: 2
-  currentLevel: 1
 --- !u!4 &1792321855
 Transform:
   m_ObjectHideFlags: 0
@@ -1019,12 +1163,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1792321853}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.96134, y: 0, z: 0.14718}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -801.62494, y: 0.00001, z: -2670.4927}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1384931014}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
@@ -1036,5 +1180,5 @@ SceneRoots:
   - {fileID: 809716745}
   - {fileID: 1761497486}
   - {fileID: 1572322292}
-  - {fileID: 1792321855}
   - {fileID: 404535817}
+  - {fileID: 1384931014}

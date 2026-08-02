@@ -2,34 +2,41 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
-    private Transform playerTransform;
-
-
-    [SerializeField] private LevelData[] levels;
+    private GameManager gameManager;
 
     [SerializeField] private int maxSpawnedObjects = 20;
     [SerializeField] private float spawnInterval = 0.1f;
 
     private int currentSpawnedObjects = 0;
 
-    [SerializeField] private int currentLevel = 1;
 
     void Start()
     {
-        playerTransform = GameObject.Find("Player").transform;
+        gameManager = FindAnyObjectByType<GameManager>();
+
         InvokeRepeating(nameof(SpawnObject), 0f, spawnInterval);
+    }
+
+    private GameObject GetRandomFoodObjForCurrentLevel()
+    {
+        LevelData currentLevelData = gameManager.GetCurrentLevelData();
+        int foodObjCount = currentLevelData.food.Length;
+        int randomIdx = Random.Range(0, foodObjCount);
+
+        return currentLevelData.food[randomIdx];
     }
 
     void SpawnObject()
     {
-        if (currentSpawnedObjects >= maxSpawnedObjects)
+        if (currentSpawnedObjects >= maxSpawnedObjects || gameManager.GetCurrentLevelFoodCount() == 0)
             return;
 
-        int randomIndex = Random.Range(0, levels[currentLevel - 1].spawnables.Length);
-        GameObject prefab = levels[currentLevel - 1].spawnables[randomIndex];
+        GameObject randomFoodObjForCurrentLevel = GetRandomFoodObjForCurrentLevel();
 
         float spawnRadiusX = 10f;
         float spawnRadiusZ = 5f;
+
+        Transform playerTransform = gameManager.GetPlayerTransform();
 
         Vector3 randomPosition = new Vector3(
             playerTransform.position.x + Random.Range(-spawnRadiusX, spawnRadiusX),
@@ -37,15 +44,15 @@ public class SpawnManager : MonoBehaviour
             playerTransform.position.z + Random.Range(-spawnRadiusZ, spawnRadiusZ)
         );
 
-        GameObject obj = Instantiate(prefab, randomPosition, Quaternion.identity);
-        obj.transform.localScale = new Vector3(1, 1, 1);
+        GameObject obj = Instantiate(randomFoodObjForCurrentLevel, randomPosition, Quaternion.identity);
+        obj.transform.localScale = new Vector3(2, 2, 2);
 
         currentSpawnedObjects++;
     }
 
     public void ObjectDestroyed()
     {
-        currentSpawnedObjects--;
+        currentSpawnedObjects = Mathf.Max(0, currentSpawnedObjects - 1);
     }
 
 }
