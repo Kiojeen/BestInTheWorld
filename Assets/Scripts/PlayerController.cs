@@ -4,13 +4,14 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerController : MonoBehaviour
 {
+    private SpawnManager spawnManager;
+
+
     private Rigidbody playerRb;
 
     [SerializeField] private GameObject currentPlayer;
 
     [SerializeField] private GameObject[] playersList;
-
-
 
     [SerializeField] private InputAction movementAction;
 
@@ -27,6 +28,7 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         playerRb = GetComponent<Rigidbody>();
+        spawnManager = GameObject.Find("SpawnManager").GetComponent<SpawnManager>();
 
         movementAction.Enable();
     }
@@ -72,6 +74,15 @@ public class PlayerController : MonoBehaviour
         if (playerRb.linearVelocity.magnitude > maxSpeed)
         {
             playerRb.linearVelocity = playerRb.linearVelocity.normalized * maxSpeed;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Food"))
+        {
+            Destroy(other.gameObject);
+            spawnManager.ObjectDestroyed();
         }
     }
 }
