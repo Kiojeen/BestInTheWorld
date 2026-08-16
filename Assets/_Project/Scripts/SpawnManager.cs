@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,8 +9,22 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] private int maxSpawnedObjects = 20;
     [SerializeField] private float spawnInterval = 0.1f;
 
+    [Header("Haters")]
+    [SerializeField] private GameObject[] haterPrefabs;
+    [SerializeField] private float haterCooldown = 10f;
+    [SerializeField] private float haterFollowSpeed = 0.3f;
+    [SerializeField] private int haterDamage = 5;
+    [SerializeField] private float haterSpawnRadiusX = 12f;
+    [SerializeField] private float haterSpawnRadiusZ = 6f;
+    [SerializeField] private float haterMinDistance = 2f;
+    [SerializeField] private float haterDespawnDistance = 10f;
+    [SerializeField] private float haterScale = 0.6f;
+    [SerializeField] private float haterRotationSpeed = 15f;
+    [SerializeField] private ParticleSystem haterHitEffect;
+
     private int currentSpawnedObjects = 0;
     private int currentSpanedCollectableCompanions = 0;
+    private int currentSpawnedHaters = 0;
 
     private readonly HashSet<int> spawnedCompanionIds = new HashSet<int>();
 
@@ -19,6 +34,29 @@ public class SpawnManager : MonoBehaviour
 
         InvokeRepeating(nameof(SpawnObject), 0f, spawnInterval);
         InvokeRepeating(nameof(SpawnCompanion), 10, 15);
+
+        StartCoroutine(HaterRoutine());
+    }
+
+    private IEnumerator HaterRoutine()
+    {
+        yield return new WaitForSeconds(haterCooldown);
+
+        while (true)
+        {
+            if (gameManager.CurrentPlayerScore >= gameManager.CurrentLevelData.maxLevelScore)
+            {
+                yield return new WaitForSeconds(1f);
+                continue;
+            }
+
+            SpawnHater();
+
+            while (currentSpawnedHaters > 0)
+                yield return null;
+
+            yield return new WaitForSeconds(haterCooldown);
+        }
     }
 
     private GameObject GetRandomFoodObjForCurrentLevel()
@@ -33,9 +71,6 @@ public class SpawnManager : MonoBehaviour
     void SpawnCompanion()
     {
         if (currentSpanedCollectableCompanions >= 1)
-            return;
-
-        if (gameManager.CurrentPlayerScore < gameManager.CurrentLevelData.maxLevelScore / 4)
             return;
 
         LevelData levelData = gameManager.CurrentLevelData;
@@ -111,14 +146,65 @@ public class SpawnManager : MonoBehaviour
             playerTransform.position.z + Random.Range(-spawnRadiusZ, spawnRadiusZ)
         );
 
-        Instantiate(
+        GameObject instance = Instantiate(
             randomFoodObjForCurrentLevel,
             randomPosition,
             Quaternion.identity,
             transform
         );
 
+        instance.tag = "Food";
+
+        if (instance.GetComponent<FoodController>() == null)
+        {
+            instance.AddComponent<FoodController>();
+        }
+
         currentSpawnedObjects++;
+    }
+
+    void SpawnHater()
+    {
+        if (haterPrefabs == null || haterPrefabs.Length == 0)
+            return;
+
+        Transform playerTransform = gameManager.PlayerTransform;
+
+        Vector3 randomPosition = Vector3.zero;
+        int attempts = 0;
+        do
+        {
+            randomPosition = new Vector3(
+                playerTransform.position.x + Random.Range(-haterSpawnRadiusX, haterSpawnRadiusX),
+                0f,
+                playerTransform.position.z + Random.Range(-haterSpawnRadiusZ, haterSpawnRadiusZ)
+            );
+            attempts++;
+        }
+        while (Vector3.Distance(playerTransform.position, randomPosition) < haterMinDistance && attempts < 10);
+
+        GameObject haterPrefab = haterPrefabs[Random.Range(0, haterPrefabs.Length)];
+
+        GameObject instance = Instantiate(
+            haterPrefab,
+            randomPosition,
+            Quaternion.Euler(-90, 0, 180),
+            transform
+        );
+
+        instance.tag = "Hater";
+        instance.layer = 0;
+        instance.transform.localScale = Vector3.one * haterScale;
+
+        HaterController hater = instance.AddComponent<HaterController>();
+        hater.Init(haterFollowSpeed, haterDamage, haterDespawnDistance, haterHitEffect, haterRotationSpeed);
+
+        currentSpawnedHaters++;
+    }
+
+    public void HaterDestroyed()
+    {
+        currentSpawnedHaters = Mathf.Max(0, currentSpawnedHaters - 1);
     }
 
     public void FoodObjectDestroyed()
@@ -153,6 +239,7 @@ public class SpawnManager : MonoBehaviour
         currentSpawnedObjects = 0;
         spawnedCompanionIds.Clear();
         currentSpanedCollectableCompanions = 0;
+        currentSpawnedHaters = 0;
     }
 
 }

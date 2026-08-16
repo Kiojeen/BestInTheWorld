@@ -41,6 +41,7 @@ public class FoodController : MonoBehaviour
 
         StartCollectEffect();
         gameManager.IncreasePlayerScoreBy(1);
+        gameManager.ModifyHealth(1);
 
         spawnManager.FoodObjectDestroyed();
         Destroy(gameObject);

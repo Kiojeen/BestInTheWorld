@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Food
   - CollectableCompanion
+  - Hater
   layers:
   - Default
   - TransparentFX

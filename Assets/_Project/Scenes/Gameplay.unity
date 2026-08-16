@@ -119,6 +119,249 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &143390392
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 143390393}
+  - component: {fileID: 143390395}
+  - component: {fileID: 143390394}
+  - component: {fileID: 143390396}
+  m_Layer: 0
+  m_Name: SoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &143390393
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 143390392}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1384931014}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &143390394
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 143390392}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!82 &143390395
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 143390392}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: ad403fe5cb1141c4db962f01954ad170, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &143390396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 143390392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cee635b142e98940aa55086fbae96a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SoundManager
+  enemyHitSound: {fileID: 8300000, guid: b0b242627359b284db715a285e7a7542, type: 3}
+  eatSound: {fileID: 8300000, guid: bbacfed01bb37ac40bde4df6e2a0d983, type: 3}
+  characterChangeSound: {fileID: 8300000, guid: 72f560e8f016ce64e8fa45b2945f0ba0, type: 3}
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -589,7 +832,7 @@ MonoBehaviour:
     - companionAvatar: {fileID: 1531173475837508, guid: 9c485c996b92c5c4caa648d570b0a916, type: 3}
       isOwned: 0
     playerCanHaveCompanions: 1
-    maxLevelScore: 1
+    maxLevelScore: 25
     food:
     - {fileID: 5283984752288628349, guid: c1af0d29e34b726448683bda363e269c, type: 3}
     - {fileID: 2257153481799421377, guid: a2746c70d901f364bb16ec0936e08eb3, type: 3}
@@ -620,9 +863,17 @@ MonoBehaviour:
     avatarChangeEffect: {fileID: 7226888052703040407, guid: 7ec363c8df426644ea85f8d6d570561c, type: 3}
   - avatarName: Jose
     playerAvatar: {fileID: 4465120591797241529, guid: 0e40266a91a0b05489cb2c6985e6e457, type: 3}
-    playerCompanions: []
-    playerCanHaveCompanions: 0
-    maxLevelScore: 2
+    playerCompanions:
+    - companionAvatar: {fileID: 7071838481567010436, guid: e34732121a37148449d405f9fc8c1007, type: 3}
+      isOwned: 0
+    - companionAvatar: {fileID: 7071838481567010436, guid: e34732121a37148449d405f9fc8c1007, type: 3}
+      isOwned: 0
+    - companionAvatar: {fileID: 7071838481567010436, guid: e34732121a37148449d405f9fc8c1007, type: 3}
+      isOwned: 0
+    - companionAvatar: {fileID: 7071838481567010436, guid: e34732121a37148449d405f9fc8c1007, type: 3}
+      isOwned: 0
+    playerCanHaveCompanions: 1
+    maxLevelScore: 25
     food:
     - {fileID: 1488839329201538974, guid: f253ddfd56c00134494cabac0afd89d2, type: 3}
     - {fileID: 4006238477450833299, guid: 2ac02e58e67d6c74092b33644b6a13e3, type: 3}
@@ -639,8 +890,8 @@ MonoBehaviour:
     - {fileID: 645367139506391920, guid: ae0d158be0b5b374abc024e67718a92b, type: 3}
     - {fileID: 1314626054188553670, guid: 8a40bb35c3c34fd429615bbb665fbcca, type: 3}
     - {fileID: 5800536394690487679, guid: d484d397f430c93478ffd64446f9cc83, type: 3}
-    collectEffect: {fileID: 0}
-    avatarChangeEffect: {fileID: 9027514048236820043, guid: effb650189dc5714e9e9801b1cfb3991, type: 3}
+    collectEffect: {fileID: 7177991128484655658, guid: 59a35ab9f68edff40b6e5332bed330f5, type: 3}
+    avatarChangeEffect: {fileID: 4425129568604114668, guid: bbeeb0ddc21369746aaaae5c5c1c09cf, type: 3}
   - avatarName: Alex
     playerAvatar: {fileID: 4551107278389196633, guid: aa9d459c0cf142547aae4379c928bc85, type: 3}
     playerCompanions:
@@ -651,7 +902,7 @@ MonoBehaviour:
     - companionAvatar: {fileID: 2071751738509832121, guid: c2698e26e120af94dab17e6c5f87e322, type: 3}
       isOwned: 0
     playerCanHaveCompanions: 1
-    maxLevelScore: 3
+    maxLevelScore: 25
     food:
     - {fileID: 4171634071074826714, guid: 92447023b5ff09e4786ef30d9f474c15, type: 3}
     - {fileID: 8239965599649921239, guid: d471dfce0feaa564c95a9edabfcd6c5c, type: 3}
@@ -665,9 +916,18 @@ MonoBehaviour:
       isOwned: 0
     - companionAvatar: {fileID: 1588090451174212, guid: c737dd230724d61469e1c672cf47ed9e, type: 3}
       isOwned: 0
+    - companionAvatar: {fileID: 1588090451174212, guid: c737dd230724d61469e1c672cf47ed9e, type: 3}
+      isOwned: 0
     playerCanHaveCompanions: 1
-    maxLevelScore: 4
-    food: []
+    maxLevelScore: 25
+    food:
+    - {fileID: 1721700908425415441, guid: c31fa7fd84ba9ba4a80cf6098688b572, type: 3}
+    - {fileID: 5080998259818607360, guid: 1b12db4ab222c0e4a81a1e75a38d37d1, type: 3}
+    - {fileID: 7870556168029128089, guid: 97005552133baf248b97f6efb24759b3, type: 3}
+    - {fileID: 8680784554032982825, guid: d6cb195a54160214992145d2bf3f5574, type: 3}
+    - {fileID: 197645268316786979, guid: 23a49982258141c4e973471830b5470e, type: 3}
+    - {fileID: 197645268316786979, guid: 23a49982258141c4e973471830b5470e, type: 3}
+    - {fileID: 5361383873243158945, guid: b9fbffa97de3f1140a60b2a273ca21bb, type: 3}
     collectEffect: {fileID: 5824670795371433368, guid: f6fd568b816c64943a44efc3add3a881, type: 3}
     avatarChangeEffect: {fileID: 3280519133390621004, guid: a71be3e7990efb040a07565c43cbb198, type: 3}
 --- !u!1 &809716742
@@ -818,8 +1078,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.3902987, y: 1.6858697, z: 1.343803}
-  m_Center: {x: -0.015585601, y: 0.04331571, z: -0.04689035}
+  m_Size: {x: 2, y: 2, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -969,6 +1229,7 @@ Transform:
   - {fileID: 1792321855}
   - {fileID: 732330679}
   - {fileID: 981952267}
+  - {fileID: 143390393}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1572322290
@@ -1166,6 +1427,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SpawnManager
   maxSpawnedObjects: 20
   spawnInterval: 2
+  haterPrefabs:
+  - {fileID: 2105627422072434884, guid: 9c17d598fae962d40a9da109af76e8b6, type: 3}
+  - {fileID: 2360926955953452282, guid: 149ea22a7ac3727429acc972590383c0, type: 3}
+  - {fileID: 9095809361608879911, guid: 241ebac6832c42c4e893b9c8d8e40470, type: 3}
+  - {fileID: 4933334872984948577, guid: f5d643a5d4ff23644b6c0f59b922ebd5, type: 3}
+  - {fileID: 1393865618682631142, guid: ac4b12f879a6b054dadd6eb0ae8d2fcf, type: 3}
+  - {fileID: 1349039373076865573, guid: aeaee2a2dd149424eb62ddda5047857b, type: 3}
+  - {fileID: 6505876709127693028, guid: 165529a066e497f44a428ea2414b9fa8, type: 3}
+  - {fileID: 1109011958144341824, guid: 6c70dead6c5b491489694036c5ee666a, type: 3}
+  - {fileID: 7071081764616874953, guid: 9cbced948e24eea4cb24ad4f87d69c8c, type: 3}
+  - {fileID: 2803313299738309851, guid: 4dbfe0ad6a0720c448a71793bf626eec, type: 3}
+  haterCooldown: 10
+  haterFollowSpeed: 0.3
+  haterDamage: 10
+  haterSpawnRadiusX: 12
+  haterSpawnRadiusZ: 6
+  haterMinDistance: 2
+  haterDespawnDistance: 10
+  haterScale: 1
+  haterRotationSpeed: 15
+  haterHitEffect: {fileID: 8791802859067835849, guid: ae07f2a45f14a82428409cfe410e6002, type: 3}
 --- !u!4 &1792321855
 Transform:
   m_ObjectHideFlags: 0

@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     private GameManager gameManager;
+    private SoundManager soundManager;
 
     private Rigidbody playerRb;
     private GameObject currentAvatar;
@@ -38,6 +39,9 @@ public class PlayerController : MonoBehaviour
         if (gameManager == null)
             gameManager = FindAnyObjectByType<GameManager>();
 
+        if (soundManager == null)
+            soundManager = FindAnyObjectByType<SoundManager>();
+
         gameManager.OnLevelChanged += HandleLevelChanged;
     }
 
@@ -62,16 +66,27 @@ public class PlayerController : MonoBehaviour
 
     public void ReplacePlayerAvatar(GameObject newAvatar, ParticleSystem effect = null)
     {
+        soundManager.PlayCharacterChangeSound();
+
         if (currentAvatar != null)
             Destroy(currentAvatar);
 
-        if (effect != null)
+        currentAvatar = Instantiate(newAvatar, transform);
+        currentAvatar.transform.localPosition = Vector3.zero;
+
+        Renderer renderer = currentAvatar.GetComponentInChildren<Renderer>();
+
+        if (renderer != null)
         {
-            ParticleSystem ps = Instantiate(effect, transform);
-            Destroy(ps.gameObject, ps.main.duration + ps.main.startLifetime.constantMax);
+            Vector3 offset = renderer.bounds.center - currentAvatar.transform.position;
+            currentAvatar.transform.position -= offset;
         }
 
-        currentAvatar = Instantiate(newAvatar, transform);
+        if (effect != null)
+        {
+            ParticleSystem ps = Instantiate(effect, currentAvatar.transform);
+            Destroy(ps.gameObject, ps.main.duration + ps.main.startLifetime.constantMax);
+        }
     }
 
     private void SetupCompanions(LevelData levelData)
@@ -209,6 +224,7 @@ public class PlayerController : MonoBehaviour
     {
         if (other.CompareTag("Food"))
         {
+            soundManager.PlayEatSound();
             FoodController food = other.GetComponent<FoodController>();
             if (food != null)
                 food.Collect();
@@ -221,6 +237,15 @@ public class PlayerController : MonoBehaviour
                 int id = ccc.Id;
                 ccc.Collect();
                 SetCompanionOwned(id, true);
+            }
+        }
+        else if (other.CompareTag("Hater"))
+        {
+            HaterController hc = other.GetComponent<HaterController>();
+            if (hc != null)
+            {
+                soundManager.PlayEnemyHitSound();
+                hc.Hit();
             }
         }
     }

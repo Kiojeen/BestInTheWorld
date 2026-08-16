@@ -8,6 +8,9 @@ public class CompanionController : MonoBehaviour
     private float orbitSpeed;
     private float currentAngle;
 
+    private SoundManager soundManager;
+
+
     private Animator animator;
     public void Init(Transform followTarget, float radius, float speedDegPerSec, float startAngleDeg)
     {
@@ -20,6 +23,9 @@ public class CompanionController : MonoBehaviour
     private void Start()
     {
         animator = GetComponent<Animator>();
+
+        if (soundManager == null)
+            soundManager = FindAnyObjectByType<SoundManager>();
     }
 
     void Update()
@@ -37,6 +43,7 @@ public class CompanionController : MonoBehaviour
     {
         if (other.CompareTag("Food"))
         {
+            soundManager.PlayEatSound();
             animator.SetTrigger("Collect");
             FoodController food = other.GetComponent<FoodController>();
             if (food != null)

@@ -84,7 +84,7 @@ public class HUDController : MonoBehaviour
 
     private void UpdateHealthBar()
     {
-        float pct = Mathf.Clamp01(gameManager.CurrentPlayerHealth / gameManager.MaxPlayerHealth) * 100f;
+        float pct = Mathf.Clamp01((float)gameManager.CurrentPlayerHealth / gameManager.MaxPlayerHealth) * 100f;
         healthBarFill.style.width = new Length(pct, LengthUnit.Percent);
     }
 }
