@@ -1,0 +1,55 @@
+<UXML xmlns="UnityEngine.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/_Project/UI/Styles/GameUI.uss?fileID=7433441132597879392&amp;guid=2c1ff2d784ca1a14d9c45b683f3106b0&amp;type=3#GameUI"/>
+    <VisualElement name="GameHUD">
+        <VisualElement name="TopSection">
+            <VisualElement name="PlayerPanelSection">
+                <VisualElement name="PlayerPanel" class="hud-panel">
+                    <VisualElement class="corner corner-tl"/>
+                    <VisualElement class="corner corner-br"/>
+                    <VisualElement name="PlayerPanelTop" class="row-container">
+                        <VisualElement name="LevelBadge">
+                            <VisualElement name="LevelBadgeInner">
+                                <Label name="CurrentPlayerLevel" text="1"/>
+                            </VisualElement>
+                        </VisualElement>
+                        <VisualElement name="CharacterNameContainer" class="col-container">
+                            <Label name="AvatarName" text="AVATAR N." class="panel-title"/>
+                        </VisualElement>
+                    </VisualElement>
+                    <VisualElement name="HealthBlock" class="stat-block">
+                        <VisualElement class="stat-label-row">
+                            <Label text="HP" class="stat-label"/>
+                            <Label text="220 / 300" name="HealthValue" class="stat-value"/>
+                        </VisualElement>
+                        <VisualElement name="HealthBarTrack" class="bar-track bar-track--health">
+                            <VisualElement name="HealthBarFill" class="bar-fill bar-fill--health" style="width: 10%;"/>
+                            <VisualElement class="bar-notches"/>
+                        </VisualElement>
+                    </VisualElement>
+                    <VisualElement name="XPBlock" class="stat-block stat-block--minor">
+                        <VisualElement name="XPBarTrack" class="bar-track bar-track--xp" style="display: none;">
+                            <VisualElement name="XPBarFill" class="bar-fill bar-fill--xp" style="width: 40%;"/>
+                        </VisualElement>
+                    </VisualElement>
+                </VisualElement>
+            </VisualElement>
+            <VisualElement name="ScoreSection" class="hud-panel hud-panel--accent">
+                <VisualElement class="corner corner-tl"/>
+                <VisualElement class="corner corner-br"/>
+                <Label text="SCORE" class="panel-subtitle panel-subtitle--accent"/>
+                <Label text="2 / 100" name="ScoreValue" class="score-value"/>
+                <VisualElement name="ScoreBarTrack" class="bar-track bar-track--score">
+                    <VisualElement name="ScoreBarFill" class="bar-fill bar-fill--score" style="width: 62%;"/>
+                </VisualElement>
+            </VisualElement>
+            <VisualElement name="ControlsSection">
+                <Button name="ControlButtonPause" class="control-btn control-btn--danger">
+                    <VisualElement class="pause-icon">
+                        <VisualElement class="pause-bar"/>
+                        <VisualElement class="pause-bar"/>
+                    </VisualElement>
+                </Button>
+            </VisualElement>
+        </VisualElement>
+    </VisualElement>
+</UXML>

@@ -1,3 +1,4 @@
+using Solo.MOST_IN_ONE;
 using UnityEngine;
 
 public class FoodController : MonoBehaviour
@@ -21,11 +22,11 @@ public class FoodController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Transform playerTransform = gameManager.GetPlayerTransform();
+        Transform playerTransform = gameManager.PlayerTransform;
 
         if (Vector3.Distance(playerTransform.position, transform.position) > maxSpawnDistance)
         {
-            spawnManager.ObjectDestroyed();
+            spawnManager.FoodObjectDestroyed();
             Destroy(gameObject);
         }
 
@@ -36,20 +37,29 @@ public class FoodController : MonoBehaviour
 
     public void Collect()
     {
-        LevelData levelData = gameManager.GetCurrentLevelData();
+        MOST_HapticFeedback.Generate(MOST_HapticFeedback.HapticTypes.LightImpact);
 
-        if (levelData.foodCollectEffect != null)
-        {
-            Instantiate(
-                levelData.foodCollectEffect,
-                transform.position,
-                Quaternion.identity
-            );
-        }
-
+        StartCollectEffect();
         gameManager.IncreasePlayerScoreBy(1);
 
-        spawnManager.ObjectDestroyed();
+        spawnManager.FoodObjectDestroyed();
         Destroy(gameObject);
+    }
+
+    public void StartCollectEffect()
+    {
+        LevelData levelData = gameManager.CurrentLevelData;
+        ParticleSystem effect = levelData.collectEffect;
+
+        if (effect != null)
+        {
+            ParticleSystem ps = Instantiate(
+                 effect,
+                 transform.position,
+                 Quaternion.identity
+             );
+
+            Destroy(ps.gameObject, ps.main.duration + ps.main.startLifetime.constantMax);
+        }
     }
 }

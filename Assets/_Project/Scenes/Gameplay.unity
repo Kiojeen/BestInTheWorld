@@ -319,7 +319,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 886251e9a18ece04ea8e61686c173e1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachinePositionComposer
-  CameraDistance: 5
+  CameraDistance: 8
   DeadZoneDepth: 0
   Composition:
     ScreenPosition: {x: 0, y: 0}
@@ -390,7 +390,7 @@ Transform:
   m_GameObject: {fileID: 404535814}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 4.9999995, z: 0.00000059604633}
+  m_LocalPosition: {x: -0.00000047683716, y: 7.999999, z: 0.0000010728834}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -523,11 +523,6 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
---- !u!1 &720936428 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7882311188171952254, guid: d3c7d1618c2d3674abc8e70868818fb3, type: 3}
-  m_PrefabInstance: {fileID: 7169507149848408803}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &732330678
 GameObject:
   m_ObjectHideFlags: 0
@@ -575,13 +570,26 @@ MonoBehaviour:
   player: {fileID: 809716742}
   currentGameplayLevel: 0
   currentPlayerScore: 0
+  maxPlayerHealth: 100
+  currentPlayerHealth: 100
   levels:
   - avatarName: Sonia
-    playerAvatar: {fileID: 720936428}
-    playerCompanions: []
-    playerCanHaveCompanion: 1
-    playerOwnsCompanion: 0
-    maxLevelScore: 2
+    playerAvatar: {fileID: 7882311188171952254, guid: d3c7d1618c2d3674abc8e70868818fb3, type: 3}
+    playerCompanions:
+    - companionAvatar: {fileID: 1424105536132696, guid: 2ec61b6551995414e864c9bebb4cb0be, type: 3}
+      isOwned: 0
+    - companionAvatar: {fileID: 1649754873486108, guid: de2c45cecc5231147a9769eba8c06a86, type: 3}
+      isOwned: 0
+    - companionAvatar: {fileID: 1115985757650416, guid: e0e1165640516fb4abe42fbb6339664f, type: 3}
+      isOwned: 0
+    - companionAvatar: {fileID: 1952192267291074, guid: ab479bd065ed110448f6315e7b8d24f2, type: 3}
+      isOwned: 0
+    - companionAvatar: {fileID: 1071349104714722, guid: 93591abefa6175b4181818e528245c06, type: 3}
+      isOwned: 0
+    - companionAvatar: {fileID: 1531173475837508, guid: 9c485c996b92c5c4caa648d570b0a916, type: 3}
+      isOwned: 0
+    playerCanHaveCompanions: 1
+    maxLevelScore: 1
     food:
     - {fileID: 5283984752288628349, guid: c1af0d29e34b726448683bda363e269c, type: 3}
     - {fileID: 2257153481799421377, guid: a2746c70d901f364bb16ec0936e08eb3, type: 3}
@@ -608,13 +616,13 @@ MonoBehaviour:
     - {fileID: 8536141940083026543, guid: d17f47b13563d2d4eb50892d1ab6e08b, type: 3}
     - {fileID: 407097720119702790, guid: 8c4d69f0e78df854b95c801b1e852666, type: 3}
     - {fileID: 7268432415809173306, guid: d6a658df2d87e91418c22f6020fe6e0e, type: 3}
-    foodCollectEffect: {fileID: 4021103657954561960, guid: 5c755f9bc5253ea418e919994537dcc7, type: 3}
+    collectEffect: {fileID: 4021103657954561960, guid: 5c755f9bc5253ea418e919994537dcc7, type: 3}
+    avatarChangeEffect: {fileID: 7226888052703040407, guid: 7ec363c8df426644ea85f8d6d570561c, type: 3}
   - avatarName: Jose
     playerAvatar: {fileID: 4465120591797241529, guid: 0e40266a91a0b05489cb2c6985e6e457, type: 3}
     playerCompanions: []
-    playerCanHaveCompanion: 0
-    playerOwnsCompanion: 0
-    maxLevelScore: 4
+    playerCanHaveCompanions: 0
+    maxLevelScore: 2
     food:
     - {fileID: 1488839329201538974, guid: f253ddfd56c00134494cabac0afd89d2, type: 3}
     - {fileID: 4006238477450833299, guid: 2ac02e58e67d6c74092b33644b6a13e3, type: 3}
@@ -631,23 +639,37 @@ MonoBehaviour:
     - {fileID: 645367139506391920, guid: ae0d158be0b5b374abc024e67718a92b, type: 3}
     - {fileID: 1314626054188553670, guid: 8a40bb35c3c34fd429615bbb665fbcca, type: 3}
     - {fileID: 5800536394690487679, guid: d484d397f430c93478ffd64446f9cc83, type: 3}
-    foodCollectEffect: {fileID: 5112403345868107899, guid: 6f34ef0d986e9db4199cf75805f79753, type: 3}
-  - avatarName: 
-    playerAvatar: {fileID: 0}
-    playerCompanions: []
-    playerCanHaveCompanion: 0
-    playerOwnsCompanion: 0
-    maxLevelScore: 0
+    collectEffect: {fileID: 0}
+    avatarChangeEffect: {fileID: 9027514048236820043, guid: effb650189dc5714e9e9801b1cfb3991, type: 3}
+  - avatarName: Alex
+    playerAvatar: {fileID: 4551107278389196633, guid: aa9d459c0cf142547aae4379c928bc85, type: 3}
+    playerCompanions:
+    - companionAvatar: {fileID: 2071751738509832121, guid: c2698e26e120af94dab17e6c5f87e322, type: 3}
+      isOwned: 0
+    - companionAvatar: {fileID: 2071751738509832121, guid: c2698e26e120af94dab17e6c5f87e322, type: 3}
+      isOwned: 0
+    - companionAvatar: {fileID: 2071751738509832121, guid: c2698e26e120af94dab17e6c5f87e322, type: 3}
+      isOwned: 0
+    playerCanHaveCompanions: 1
+    maxLevelScore: 3
+    food:
+    - {fileID: 4171634071074826714, guid: 92447023b5ff09e4786ef30d9f474c15, type: 3}
+    - {fileID: 8239965599649921239, guid: d471dfce0feaa564c95a9edabfcd6c5c, type: 3}
+    - {fileID: 2464988732922791739, guid: 0bb3763a445b5de4eb87236307133810, type: 3}
+    collectEffect: {fileID: 7226888052703040407, guid: 7ec363c8df426644ea85f8d6d570561c, type: 3}
+    avatarChangeEffect: {fileID: 5515065002404772068, guid: b5c8ca7ed10b61e499cce8ec3b6e2e4c, type: 3}
+  - avatarName: King Ilias
+    playerAvatar: {fileID: 581627176805705531, guid: 9b39049ef9782c44fab5a0cd018edd06, type: 3}
+    playerCompanions:
+    - companionAvatar: {fileID: 1588090451174212, guid: c737dd230724d61469e1c672cf47ed9e, type: 3}
+      isOwned: 0
+    - companionAvatar: {fileID: 1588090451174212, guid: c737dd230724d61469e1c672cf47ed9e, type: 3}
+      isOwned: 0
+    playerCanHaveCompanions: 1
+    maxLevelScore: 4
     food: []
-    foodCollectEffect: {fileID: 0}
-  - avatarName: 
-    playerAvatar: {fileID: 0}
-    playerCompanions: []
-    playerCanHaveCompanion: 0
-    playerOwnsCompanion: 0
-    maxLevelScore: 0
-    food: []
-    foodCollectEffect: {fileID: 0}
+    collectEffect: {fileID: 5824670795371433368, guid: f6fd568b816c64943a44efc3add3a881, type: 3}
+    avatarChangeEffect: {fileID: 3280519133390621004, guid: a71be3e7990efb040a07565c43cbb198, type: 3}
 --- !u!1 &809716742
 GameObject:
   m_ObjectHideFlags: 0
@@ -660,7 +682,7 @@ GameObject:
   - component: {fileID: 809716744}
   - component: {fileID: 809716743}
   - component: {fileID: 809716746}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -732,6 +754,9 @@ MonoBehaviour:
   maxSpeed: 0.5
   spinSpeed: 10
   speedMultiplier: 2
+  stopDistance: 0.2
+  companionOrbitRadius: 2
+  companionOrbitSpeed: 40
 --- !u!54 &809716744
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -757,7 +782,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 4
   m_CollisionDetection: 0
 --- !u!4 &809716745
 Transform:
@@ -771,8 +796,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1508634117}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 180}
 --- !u!65 &809716746
@@ -794,8 +818,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.3902987, y: 1.6858697, z: 0.4882609}
-  m_Center: {x: -0.015585601, y: 0.04331571, z: 0.016601458}
+  m_Size: {x: 1.3902987, y: 1.6858697, z: 1.343803}
+  m_Center: {x: -0.015585601, y: 0.04331571, z: -0.04689035}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -845,6 +869,74 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &981952266
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 981952267}
+  - component: {fileID: 981952268}
+  - component: {fileID: 981952269}
+  m_Layer: 0
+  m_Name: GameUI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &981952267
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 981952266}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1384931014}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &981952268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 981952266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.dll::UnityEngine.UIElements.UIDocument
+  m_PanelSettings: {fileID: 11400000, guid: f5ff811bb6542d84499c8cf211dd9f38, type: 2}
+  m_ParentUI: {fileID: 0}
+  sourceAsset: {fileID: 9197481963319205126, guid: 7f8375b3ba945b04481ac0d16f070d52, type: 3}
+  m_SortingOrder: 0
+  m_Position: 0
+  m_WorldSpaceSizeMode: 1
+  m_WorldSpaceWidth: 1920
+  m_WorldSpaceHeight: 1080
+  m_PivotReferenceSize: 0
+  m_Pivot: 0
+  m_WorldSpaceCollider: {fileID: 0}
+--- !u!114 &981952269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 981952266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bf302d51120b754a83a520bad997a3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HUDController
 --- !u!1 &1384931013
 GameObject:
   m_ObjectHideFlags: 0
@@ -870,19 +962,15 @@ Transform:
   m_GameObject: {fileID: 1384931013}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 800.6636, y: -0.00001, z: 2670.64}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1792321855}
   - {fileID: 732330679}
+  - {fileID: 981952267}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1508634117 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7361213786409388740, guid: d3c7d1618c2d3674abc8e70868818fb3, type: 3}
-  m_PrefabInstance: {fileID: 7169507149848408803}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1572322290
 GameObject:
   m_ObjectHideFlags: 0
@@ -1093,63 +1181,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1384931014}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &7169507149848408803
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 809716745}
-    m_Modifications:
-    - target: {fileID: 7361213786409388740, guid: d3c7d1618c2d3674abc8e70868818fb3, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.012290009
-      objectReference: {fileID: 0}
-    - target: {fileID: 7361213786409388740, guid: d3c7d1618c2d3674abc8e70868818fb3, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.8470001
-      objectReference: {fileID: 0}
-    - target: {fileID: 7361213786409388740, guid: d3c7d1618c2d3674abc8e70868818fb3, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.008159757
-      objectReference: {fileID: 0}
-    - target: {fileID: 7361213786409388740, guid: d3c7d1618c2d3674abc8e70868818fb3, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7361213786409388740, guid: d3c7d1618c2d3674abc8e70868818fb3, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7361213786409388740, guid: d3c7d1618c2d3674abc8e70868818fb3, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7361213786409388740, guid: d3c7d1618c2d3674abc8e70868818fb3, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7361213786409388740, guid: d3c7d1618c2d3674abc8e70868818fb3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7361213786409388740, guid: d3c7d1618c2d3674abc8e70868818fb3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7361213786409388740, guid: d3c7d1618c2d3674abc8e70868818fb3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7882311188171952254, guid: d3c7d1618c2d3674abc8e70868818fb3, type: 3}
-      propertyPath: m_Name
-      value: rich_citizzens_2
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: d3c7d1618c2d3674abc8e70868818fb3, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

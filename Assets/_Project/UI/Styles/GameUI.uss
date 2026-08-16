@@ -1,0 +1,304 @@
+:root {
+    --padding-xl: 24px;
+    --padding-lg: 18px;
+    --padding-md: 16px;
+    --padding-sm: 12px;
+    --padding-xs: 8px;
+    --color-bg-panel: rgba(10, 16, 22, 0.72);
+    --color-bg-panel-accent: rgba(18, 26, 34, 0.85);
+    --color-border: rgba(120, 220, 255, 0.35);
+    --color-accent-cyan: rgb(83, 227, 255);
+    --color-accent-orange: rgb(255, 149, 43);
+    --color-accent-red: rgb(255, 76, 76);
+    --color-text-primary: rgb(232, 244, 248);
+    --color-text-dim: rgba(190, 210, 220, 0.6);
+}
+
+#GameHUD {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    padding: var(--padding-xl);
+}
+
+#TopSection {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+}
+
+/* ---------- BASE PANEL ---------- */
+.hud-panel {
+    position: relative;
+    background-color: var(--color-bg-panel);
+    border-width: 1px;
+    border-color: var(--color-border);
+    border-radius: 2px;
+    padding: var(--padding-md);
+    width: 340px;
+}
+
+.hud-panel--accent {
+    width: 220px;
+    align-items: center;
+    background-color: var(--color-bg-panel-accent);
+    border-color: rgba(255, 149, 43, 0.4);
+}
+
+/* angular corner brackets, sci-fi HUD staple */
+.corner {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border-color: var(--color-accent-cyan);
+}
+
+.corner-tl {
+    top: -1px;
+    left: -1px;
+    border-left-width: 2px;
+    border-top-width: 2px;
+}
+
+.corner-br {
+    bottom: -1px;
+    right: -1px;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+}
+
+/* ---------- LAYOUT UTILS ---------- */
+.row-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.row-container > * {
+    margin-right: 18px;
+}
+
+.col-container {
+    display: flex;
+    flex-direction: column;
+}
+
+/* ---------- PLAYER PANEL ---------- */
+#PlayerPanelTop {
+    margin-bottom: var(--padding-sm);
+}
+
+#LevelBadge {
+    width: 44px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+    rotate: 45deg;
+    background-color: rgba(83, 227, 255, 0.12);
+    border-width: 2px;
+    border-color: var(--color-accent-cyan);
+}
+
+#LevelBadgeInner {
+    rotate: -45deg;
+    align-items: center;
+    justify-content: center;
+}
+
+#CurrentPlayerLevel {
+    color: var(--color-accent-cyan);
+    font-size: 18px;
+    -unity-font-style: bold;
+    -unity-text-align: middle-center;
+}
+
+.panel-title {
+    color: var(--color-text-primary);
+    font-size: 16px;
+    -unity-font-style: bold;
+    letter-spacing: 1px;
+}
+
+.panel-subtitle {
+    color: var(--color-text-dim);
+    font-size: 10px;
+    letter-spacing: 2px;
+    -unity-font-style: bold;
+    margin-top: 2px;
+}
+
+.panel-subtitle--accent {
+    color: var(--color-accent-orange);
+}
+
+/* ---------- STAT BLOCKS / BARS ---------- */
+.stat-block {
+    margin-top: var(--padding-xs);
+}
+
+.stat-block--minor {
+    margin-top: 4px;
+}
+
+.stat-label-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 3px;
+}
+
+.stat-label {
+    color: var(--color-accent-cyan);
+    font-size: 10px;
+    letter-spacing: 1px;
+    -unity-font-style: bold;
+}
+
+.stat-value {
+    color: var(--color-text-dim);
+    font-size: 10px;
+}
+
+.bar-track {
+    height: 14px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-width: 1px;
+    border-color: rgba(255, 255, 255, 0.08);
+    border-radius: 1px;
+    overflow: hidden;
+}
+
+.bar-track--xp {
+    height: 6px;
+}
+
+.bar-track--score {
+    height: 8px;
+    margin-top: var(--padding-xs);
+    width: 100%;
+}
+
+.bar-fill {
+    height: 100%;
+    border-right-width: 2px;
+}
+
+.bar-fill--health {
+    background-color: var(--color-accent-cyan);
+    border-right-color: rgb(200, 250, 255);
+}
+
+.bar-fill--xp {
+    background-color: var(--color-accent-orange);
+    border-right-color: rgb(255, 200, 140);
+}
+
+.bar-fill--score {
+    background-color: var(--color-accent-orange);
+    border-right-color: rgb(255, 200, 140);
+}
+
+.score-value {
+    color: var(--color-text-primary);
+    font-size: 26px;
+    -unity-font-style: bold;
+    margin-top: 2px;
+}
+
+/* diagonal notch strip overlaid on the health bar for a "segmented" feel */
+.bar-notches {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0);
+    border-left-width: 0;
+}
+
+/* ---------- CONTROLS ---------- */
+.control-btn {
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-bg-panel);
+    border-width: 1px;
+    border-color: var(--color-border);
+    border-radius: 2px;
+    transition-property: background-color, border-color;
+    transition-duration: 0.15s;
+}
+
+.control-btn:hover {
+    background-color: rgba(83, 227, 255, 0.15);
+    border-color: var(--color-accent-cyan);
+}
+
+.control-btn--danger:hover {
+    background-color: rgba(255, 76, 76, 0.15);
+    border-color: var(--color-accent-red);
+}
+
+.control-btn-icon {
+    color: var(--color-text-primary);
+    font-size: 16px;
+    -unity-font-style: bold;
+}
+
+.control-btn-label {
+    color: var(--color-text-primary);
+    font-size: 9px;
+    -unity-font-style: bold;
+    letter-spacing: 1px;
+}
+
+/* ---------- CENTERING SLOTS ---------- */
+#PlayerPanelSection {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+#ControlsSection {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+/* ---------- PAUSE BUTTON ---------- */
+/* Button has default Unity chrome (padding, gradient bg, border radius)
+   baked in from the runtime theme — reset it so our .control-btn styles win */
+.control-btn {
+    padding: 0;
+    margin: 0;
+}
+
+.pause-icon {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.pause-bar {
+    width: 4px;
+    height: 16px;
+    background-color: var(--color-text-primary);
+    margin-left: 2px;
+    margin-right: 2px;
+    border-radius: 1px;
+}
+
+.control-btn--active {
+    background-color: rgba(255, 76, 76, 0.25);
+    border-color: var(--color-accent-red);
+}
+
+.control-btn--active .pause-bar {
+    background-color: var(--color-accent-red);
+}
